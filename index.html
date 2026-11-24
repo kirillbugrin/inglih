@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyTrack — Student Assignment Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 StudyTrack</h1>
+      <p>Student Assignment Planner — offline, no registration needed</p>
+    </header>
+
+    <div class="form-panel">
+      <div class="field">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" />
+      </div>
+      <div class="field">
+        <label for="task">Assignment</label>
+        <input type="text" id="task" />
+      </div>
+      <div class="field">
+        <label for="due">Due date</label>
+        <input type="date" id="due" />
+      </div>
+      <div class="field">
+        <label for="priority">Priority</label>
+        <select id="priority">
+          <option value="Low">Low</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="High">High</option>
+        </select>
+      </div>
+      <button class="btn-add" id="addBtn">+ Add task</button>
+      <button class="btn-clear" id="clearBtn">Clear all</button>
+    </div>
+
+    <div class="toolbar">
+      <span class="count" id="count">0 tasks</span>
+      <span class="count" id="overdueCount"></span>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th data-sort="subject">Subject ▲▼</th>
+          <th data-sort="task">Assignment ▲▼</th>
+          <th data-sort="due">Due ▲▼</th>
+          <th data-sort="priority">Priority ▲▼</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="taskBody"></tbody>
+    </table>
+
+    <div class="footer-note">
+      Data is saved automatically in your browser (localStorage).
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

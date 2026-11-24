@@ -1,0 +1,179 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: #e8e2d5;                         
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.35) 0%, transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(180,170,150,0.25) 0%, transparent 50%);
+  min-height: 100vh;
+  padding: 36px 16px;
+  color: #2f2a24;
+}
+
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  background: #fbf8f1;                          
+  border: 1px solid #d8d0bf;
+  border-radius: 4px;
+  box-shadow: 0 3px 0 #cfc6b2, 0 18px 36px rgba(60,50,35,0.18);
+  overflow: hidden;
+}
+
+header {
+  background: #2f4f3e;                          
+  color: #f3efe4;
+  padding: 24px 30px;
+  border-bottom: 4px solid #b8863b;             
+}
+header h1 {
+  font-size: 1.55rem;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+}
+header p {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.82rem;
+  opacity: 0.8;
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
+.form-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 30px;
+  background: #f2ebdb;
+  border-bottom: 1px dashed #c9bfa8;
+  align-items: flex-end;
+}
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field label {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #6b5d47;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.field input,
+.field select {
+  padding: 8px 10px;
+  border: 1px solid #c4b99f;
+  border-radius: 3px;
+  background: #fffdf8;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #2f2a24;
+  min-width: 130px;
+}
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: #2f4f3e;
+  box-shadow: 0 0 0 2px rgba(47,79,62,0.15);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  padding: 9px 16px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.15s, transform 0.08s;
+}
+button:active { transform: translateY(1px); }
+.btn-add { background: #2f4f3e; color: #f3efe4; }
+.btn-add:hover { background: #3c6450; }
+.btn-clear { background: #a8442f; color: #f7f1e3; }
+.btn-clear:hover { background: #8e3826; }
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
+  border-bottom: 1px solid #e2d9c6;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.toolbar .count {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.82rem;
+  color: #7a6c54;
+}
+
+table { width: 100%; border-collapse: collapse; }
+thead th {
+  background: #ede5d3;
+  text-align: left;
+  padding: 12px 18px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #5d513c;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  border-bottom: 2px solid #d3c7ad;
+}
+thead th:hover { background: #e4dac4; }
+
+tbody td {
+  padding: 13px 18px;
+  border-bottom: 1px solid #ece4d2;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+tbody tr:hover { background: #f7f1e3; }
+tbody tr.overdue { background: #f6e3dd; }
+tbody tr.overdue td { color: #a8442f; }
+tbody tr.done td { color: #a49a86; text-decoration: line-through; }
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.badge.high { background: #f0d4c8; color: #8e3826; }
+.badge.medium { background: #f0e2bd; color: #7a5a12; }
+.badge.low { background: #d8e6d6; color: #2f4f3e; }
+
+.actions button {
+  padding: 5px 10px;
+  font-size: 0.72rem;
+  margin-right: 4px;
+}
+.btn-toggle { background: #5e7a5a; color: #f3efe4; }
+.btn-toggle:hover { background: #4d664a; }
+.btn-edit { background: #8a7340; color: #f7f1e3; }
+.btn-edit:hover { background: #73602f; }
+.btn-del { background: #a8442f; color: #f7f1e3; }
+.btn-del:hover { background: #8e3826; }
+
+.empty {
+  text-align: center;
+  padding: 46px;
+  color: #a49a86;
+  font-style: italic;
+}
+.footer-note {
+  padding: 14px 30px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.72rem;
+  color: #9a8d76;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
